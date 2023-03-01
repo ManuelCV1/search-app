@@ -23,6 +23,7 @@ function App() {
           <Link to="/movies">Movies</Link>
           <br />
           <Link to="/soon">Coming soon...</Link>
+          <br />
           <SearchInputComponent searchKeyword={searchKeywordDebounced}/>
         </header>
         <main>
