@@ -24,6 +24,7 @@ function App() {
           <br />
           <Link to="/soon">Coming soon...</Link>
           <br />
+          <br />
           <SearchInputComponent searchKeyword={searchKeywordDebounced}/>
         </header>
         <main>
