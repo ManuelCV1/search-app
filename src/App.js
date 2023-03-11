@@ -1,11 +1,13 @@
-import "./App.css";
-import { SearchInputComponent } from "./SearchInputComponent";
-import { Route, Link, Routes, useSearchParams, Navigate } from "react-router-dom";
+//import style from "./App.module.css"
+//import { SearchInputComponent } from "./SearchInputComponent";
+import "./App.css"
+import { Route, Routes, useSearchParams, Navigate } from "react-router-dom";
 import { GifLayaout } from "./pages/GifPage/GifLayaout";
 import { MovieLayaout } from "./pages/MoviePage/MovieLayaout";
 import { GifDetails } from "./pages/GifPage/GifDetails";
 import { MovieDetails } from "./pages/MoviePage/MovieDetails";
 import { useDebounce } from "./Hooks/useDebounce";
+import { HeaderComponent } from "./HeaderComponet";
 
 
 function App() {
@@ -16,17 +18,11 @@ function App() {
   
   return (
     <div className="App">
-    
-        <header>
-          <Link to="/gifs">Gifs</Link>
-          <br />
-          <Link to="/movies">Movies</Link>
-          <br />
-          <Link to="/soon">Coming soon...</Link>
-          <br />
-          <br />
-          <SearchInputComponent searchKeyword={searchKeywordDebounced}/>
-        </header>
+
+      <header>
+        <HeaderComponent searchKeywordDebounced={searchKeywordDebounced}/>
+      </header>
+        
         <main>
           <Routes>
             <Route path="/gifs" element={<GifLayaout searchKeyword={searchKeywordDebounced} key={searchKeywordDebounced}/>} />

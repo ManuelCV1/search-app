@@ -1,0 +1,19 @@
+.linksText{
+    margin: 3px;
+    font-size: verdana;
+    color: #FFF;
+}
+.linksText a:hover{
+    color: #39CCCC;
+}
+
+.searchTitle{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #39CCCC;
+    padding-bottom: 10px;
+    text-shadow: 0px 4px 3px rgba(7, 62, 165, 0.664),
+             0px 8px 13px rgba(7, 62, 165, 0.664),
+             0px 18px 23px rgba(7, 62, 165, 0.664);
+}
+  
