@@ -1,17 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useResources } from "../../Hooks/useResources";
 import { DetailsOfGif } from "./DetailsOfGif";
-import { SpinnerLoader } from "../../SpinnerLoader";
-import { NoResults } from "../../NoResults";
+import { SpinnerLoader } from "../../common/SpinnerLoader";
+import { NoResults } from "../../common/NoResults";
 
 export function GifDetails() {
   const { gifId } = useParams();
-  const [dataGifDetails, ,isLoading] = useResources(undefined, gifId , undefined);
+  const [dataGifDetails, , isLoading] = useResources(
+    undefined,
+    gifId,
+    undefined
+  );
 
-  console.log(isLoading)
-
-  if (isLoading === false && dataGifDetails.length===0) {
-    return <NoResults />
+  if (isLoading === false && dataGifDetails.length === 0) {
+    return <NoResults />;
   }
 
   return (

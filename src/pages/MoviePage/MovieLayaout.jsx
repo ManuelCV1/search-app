@@ -1,5 +1,34 @@
-export function MovieLayaout() {
-    return (
-        <h1>Movie section (Coming soon...)</h1>
-    )
+import InfiniteScroll from "react-infinite-scroll-component";
+import { useMovieResources } from "../../Hooks/useMovieResources";
+import { GridComponent } from "../../common/GridComponent";
+import { SpinnerLoader } from "../../common/SpinnerLoader";
+import { useState } from "react";
+
+const path = "/discover/movie";
+
+export function MovieLayaout({ searchKeyword }) {
+  const [page, setPage] = useState(1);
+  const [data, isLoading, hasMore] = useMovieResources(
+    path,
+    searchKeyword,
+    page
+  );
+  console.log(data);
+
+  if (isLoading) {
+    return <SpinnerLoader />;
+  }
+
+  return (
+    <InfiniteScroll
+      dataLength={data.length}
+      hasMore={hasMore}
+      loader={<SpinnerLoader />}
+      next={() => setPage((prev) => prev + 1)}
+    >
+      <div>
+        <GridComponent data={data} detailRute="/movies/details/" />
+      </div>
+    </InfiniteScroll>
+  );
 }
