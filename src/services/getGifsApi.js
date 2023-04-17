@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_apiKey;
+const apiKey = process.env.REACT_APP_apiKeyGif;
 
 export default function getGifs(searchKeyword = false, id = false, offset) {
   const queryParams = `&limit=25&offset=${offset}&rating=pg-13`;

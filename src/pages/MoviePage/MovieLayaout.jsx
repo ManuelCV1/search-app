@@ -13,7 +13,6 @@ export function MovieLayaout({ searchKeyword }) {
     searchKeyword,
     page
   );
-  console.log(data);
 
   if (isLoading) {
     return <SpinnerLoader />;

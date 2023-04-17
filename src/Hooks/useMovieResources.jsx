@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 const API = "https://api.themoviedb.org/3";
+const MovieToken = process.env.REACT_APP_Movie_Token;
 
 export function useMovieResources(path, searchKeyword = "", page) {
   const [dataResults, setDataResults] = useState([]);
@@ -15,8 +16,7 @@ export function useMovieResources(path, searchKeyword = "", page) {
         : `/search/movie?query=${searchKeyword}&page=${page}&include_adult=false`;
     fetch(`${API}${searchUrl}`, {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMGE2YTU4MDM3ZGU0OGZiYzE2YjUyZmUyNDJjZTI1NiIsInN1YiI6IjY0MmUwZjM4MGQyZjUzMDA5NzM3NzY1YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5CFAaFn2mP5sxBhEPC-Tv-3F8aTnqTmTfD1yhXefsYs",
+        Authorization: `Bearer ${MovieToken}`,
         "Content-Type": "application/json;charset=utf-8",
       },
     })
