@@ -30,7 +30,10 @@ function App() {
             }
           />
 
-          <Route path="/gifs/details/:gifId" element={<GifDetails />} />
+          <Route
+            path="/gifs/details/:gifId"
+            element={<GifDetails searchKeyword={searchKeyword} />}
+          />
 
           <Route
             path="/movies"
@@ -44,12 +47,7 @@ function App() {
 
           <Route
             path="/movies/details/:movieId"
-            element={
-              <MovieDetails
-                searchKeyword={searchKeywordDebounced}
-                key={searchKeywordDebounced}
-              />
-            }
+            element={<MovieDetails searchKeyword={searchKeyword} />}
           />
 
           <Route path="*" element={<Navigate replace to="gifs" />} />

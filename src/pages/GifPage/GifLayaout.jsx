@@ -1,12 +1,12 @@
 import { GridComponent } from "../../common/GridComponent";
-import { useResources } from "../../Hooks/useResources";
+import { useGifResources } from "../../Hooks/useGifResources";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import { SpinnerLoader } from "../../common/SpinnerLoader";
 
 export function GifLayaout({ searchKeyword }) {
   const [offSet, setOffSet] = useState(0);
-  const [dataGifs, dataPagination, isLoading] = useResources(
+  const [dataGifs, dataPagination, isLoading] = useGifResources(
     searchKeyword,
     undefined,
     offSet

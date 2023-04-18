@@ -14,10 +14,6 @@ export function MovieLayaout({ searchKeyword }) {
     page
   );
 
-  if (isLoading) {
-    return <SpinnerLoader />;
-  }
-
   return (
     <InfiniteScroll
       dataLength={data.length}
@@ -26,7 +22,11 @@ export function MovieLayaout({ searchKeyword }) {
       next={() => setPage((prev) => prev + 1)}
     >
       <div>
-        <GridComponent data={data} detailRute="/movies/details/" />
+        <GridComponent
+          data={data}
+          detailRute="/movies/details/"
+          isLoading={isLoading}
+        />
       </div>
     </InfiniteScroll>
   );
