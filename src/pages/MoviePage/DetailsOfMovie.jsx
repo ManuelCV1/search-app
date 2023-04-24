@@ -1,23 +1,30 @@
-import styles from "../GifPage/DetailsOfGif.module.css";
 import placeHolcer from "../../common/placeHolder.png";
+import {
+  DetailContainer,
+  DetailImg,
+  DetailText,
+  DetailTile,
+  StrongText,
+} from "../../common/StyledCommon";
 
 export function DetailsOfMovie({ data = {} }) {
   return (
     <div>
-      <h1 className={styles.detailTitle}>Movie Details</h1>
-      <div className={styles.detailContainer}>
-        <img
-          className={`${styles.detailColums} ${styles.detailImg}`}
+      <DetailTile>Movie Details</DetailTile>
+      <DetailContainer>
+        <DetailImg
+          width={300}
+          height={450}
           src={
             data.poster_path === null
               ? placeHolcer
               : `https://image.tmdb.org/t/p/w300${data.poster_path}`
           }
           alt={data.title}
-        ></img>
-        <div className={`${styles.detailColums} ${styles.detailText}`}>
+        ></DetailImg>
+        <DetailText>
           <p>
-            <strong> Title</strong> : {data.title}
+            <StrongText> Title</StrongText> : {data.title}
           </p>
           {/*<p>
             <strong>Giphy Link</strong> :{" "}
@@ -31,26 +38,26 @@ export function DetailsOfMovie({ data = {} }) {
             </a>
           </p>*/}
           <p>
-            <strong>Genres</strong> :{" "}
+            <StrongText>Genres</StrongText> :{" "}
             {data.genres === undefined || null
               ? "Not specified"
               : data.genres.map((a) => a.name).join(", ")}
           </p>
           <p>
-            <strong>Rating</strong> :{" "}
+            <StrongText>Rating</StrongText> :{" "}
             {data.vote_average === undefined || null
               ? "Not specified"
               : data.vote_average.toFixed(2) + " (TMDB)"}
           </p>
           <p>
-            <strong>Release Date</strong> :{" "}
+            <StrongText>Release Date</StrongText> :{" "}
             {data.release_date ?? "Not specified"}
           </p>
           <p>
-            <strong> Description</strong> : {data.overview}
+            <StrongText> Description</StrongText> : {data.overview}
           </p>
-        </div>
-      </div>
+        </DetailText>
+      </DetailContainer>
     </div>
   );
 }

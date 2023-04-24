@@ -1,39 +1,44 @@
-import styles from "./DetailsOfGif.module.css";
+import {
+  DetailTile,
+  DetailContainer,
+  DetailImg,
+  DetailText,
+  DetailAnchor,
+  StrongText,
+} from "../../common/StyledCommon";
 import placeHolder from "../../common/placeHolder.png";
 
 export function DetailsOfGif({ dataGifDetails }) {
   return (
     <div>
-      <h1 className={styles.detailTitle}>Gif Details</h1>
-      <div className={styles.detailContainer}>
-        <img
-          className={`${styles.detailColums} ${styles.detailImg}`}
+      <DetailTile>Gif Details</DetailTile>
+      <DetailContainer>
+        <DetailImg
           src={dataGifDetails[0].images.original.url || placeHolder}
           alt={dataGifDetails[0].title}
-        ></img>
-        <div className={`${styles.detailColums} ${styles.detailText}`}>
+        />
+        <DetailText>
           <p>
-            <strong> Title</strong> : {dataGifDetails[0].title}
+            <StrongText> Title</StrongText> : {dataGifDetails[0].title}
           </p>
           <p>
-            <strong>Giphy Link</strong> :{" "}
-            <a
-              className={styles.anchor}
+            <StrongText>Giphy Link</StrongText> :{" "}
+            <DetailAnchor
               href={dataGifDetails[0].url}
               target="_blank"
               rel="noreferrer noopener"
             >
               {dataGifDetails[0].url}
-            </a>
+            </DetailAnchor>
           </p>
           <p>
-            <strong>Giphy ID</strong> : {dataGifDetails[0].id}
+            <StrongText>Giphy ID</StrongText> : {dataGifDetails[0].id}
           </p>
           <p>
-            <strong>Rating</strong> : {dataGifDetails[0].rating}
+            <StrongText>Rating</StrongText> : {dataGifDetails[0].rating}
           </p>
-        </div>
-      </div>
+        </DetailText>
+      </DetailContainer>
     </div>
   );
 }

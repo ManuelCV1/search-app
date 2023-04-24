@@ -50,7 +50,7 @@ function App() {
             element={<MovieDetails searchKeyword={searchKeyword} />}
           />
 
-          <Route path="*" element={<Navigate replace to="gifs" />} />
+          <Route path="*" element={<Navigate replace to="movies" />} />
         </Routes>
       </main>
     </div>

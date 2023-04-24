@@ -26,6 +26,7 @@ export function MovieLayaout({ searchKeyword }) {
           data={data}
           detailRute="/movies/details/"
           isLoading={isLoading}
+          variant="movie"
         />
       </div>
     </InfiniteScroll>
