@@ -27,6 +27,7 @@ export function GifLayaout({ searchKeyword }) {
         data={dataGifs}
         detailRute="/gifs/details/"
         isLoading={isLoading}
+        variant="gif"
       />
     </InfiniteScroll>
   );

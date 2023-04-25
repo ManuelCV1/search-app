@@ -9,9 +9,6 @@ const Grid = styled.ul`
   gap: 30px;
   padding: 25px;
   justify-content: center;
-  @media (max-width: 550px) {
-    grid-template-columns: 100%;
-  }
 `;
 
 export function GridComponent({ data = [], detailRute, isLoading, variant }) {
