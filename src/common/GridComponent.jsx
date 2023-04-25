@@ -1,6 +1,7 @@
 import { CardComponent } from "./CardComponent";
 import styled from "styled-components";
 import { NoResults } from "./NoResults";
+import { FooterUpArrow } from "./FooterUpArrow";
 
 const Grid = styled.ul`
   list-style: none;
@@ -28,6 +29,7 @@ export function GridComponent({ data = [], detailRute, isLoading, variant }) {
           />
         ))}
       </Grid>
+      <FooterUpArrow />
     </div>
   );
 }

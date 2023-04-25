@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import placeHolder from "./placeHolder.png";
-import { StyledLink } from "./StyledCommon";
+import { StyledLinkRoute } from "./StyledCommon";
 
 const Card = styled.li`
   list-style: none;
@@ -32,7 +32,7 @@ const Img = styled.img`
 
 export function CardComponent({ img, detailRute, variant }) {
   return (
-    <StyledLink to={detailRute + img.id}>
+    <StyledLinkRoute to={detailRute + img.id}>
       <Card key={img.id} variant={variant}>
         <Img
           variant={variant}
@@ -47,6 +47,6 @@ export function CardComponent({ img, detailRute, variant }) {
         ></Img>
         <p>{img.title}</p>
       </Card>
-    </StyledLink>
+    </StyledLinkRoute>
   );
 }

@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const StyledLink = styled(Link)`
+export const StyledLinkRoute = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+`;
+
+export const StyledLinkAnchor = styled.a`
   text-decoration: none;
   color: #fff;
 `;
