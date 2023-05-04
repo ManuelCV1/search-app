@@ -11,6 +11,18 @@ export const StyledLinkAnchor = styled.a`
   color: #fff;
 `;
 
+export const Jumping = keyframes`
+0%{
+  transform: scale(1);
+}
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+`;
+
 export const Rotate = keyframes`
   from {
     transform: rotate(0deg);

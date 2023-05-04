@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { FaArrowCircleUp } from "react-icons/fa";
-import { StyledLinkAnchor, StyledLinkRoute } from "./StyledCommon";
+import { Jumping, StyledLinkAnchor, StyledLinkRoute } from "./StyledCommon";
 
 const FooterDiv = styled.footer`
   color: #fff;
@@ -11,7 +11,7 @@ const FooterDiv = styled.footer`
   margin-left: -1.5rem;
   opacity: 0.8;
   font-size: 3rem;
-
+  transition: opacity 1s;
   ${(props) =>
     props.layout === "detail" &&
     css`
@@ -35,6 +35,14 @@ const FooterDiv = styled.footer`
       z-index: -1;
     }
     opacity: 1;
+  }
+  @media (max-width: 550px) {
+    &:active {
+      animation: ${Jumping} 3s linear;
+    }
+    &:after {
+      visibility: hidden;
+    }
   }
 `;
 
