@@ -2,6 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { DetailsOfMovie } from "./DetailsOfMovie";
 import { useMovieResources } from "../../Hooks/useMovieResources";
 import { SpinnerLoader } from "../../common/SpinnerLoader";
+import { FooterArrow } from "../../common/FooterArrow";
 
 export function MovieDetails({ searchKeyword }) {
   const { movieId } = useParams();
@@ -18,6 +19,7 @@ export function MovieDetails({ searchKeyword }) {
   return (
     <div>
       <DetailsOfMovie data={data} />
+      <FooterArrow layout="detail" />
     </div>
   );
 }

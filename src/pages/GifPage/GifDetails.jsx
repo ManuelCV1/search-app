@@ -2,6 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { useGifResources } from "../../Hooks/useGifResources";
 import { DetailsOfGif } from "./DetailsOfGif";
 import { SpinnerLoader } from "../../common/SpinnerLoader";
+import { FooterArrow } from "../../common/FooterArrow";
 
 export function GifDetails({ searchKeyword }) {
   const { gifId } = useParams();
@@ -21,6 +22,7 @@ export function GifDetails({ searchKeyword }) {
   return (
     <div>
       <DetailsOfGif dataGifDetails={dataGifDetails} />
+      <FooterArrow layout="detail" />
     </div>
   );
 }

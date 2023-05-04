@@ -1,10 +1,22 @@
 import { ImSpinner10 } from "react-icons/im";
-import style from "./SpinnerLoader.module.css";
+import styled from "styled-components";
+import { Rotate } from "./StyledCommon";
+
+const SpinnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+`;
+
+const IconSpinner = styled(ImSpinner10)`
+  animation: ${Rotate} 1s linear infinite;
+`;
 export function SpinnerLoader() {
   return (
-    <div className={style.spinnerContainer}>
-      <ImSpinner10 size={100} className={style.spinnerElement} />
+    <SpinnerContainer>
+      <IconSpinner size={100} />
       <p>Loading...</p>
-    </div>
+    </SpinnerContainer>
   );
 }

@@ -5,7 +5,7 @@ import { StyledLinkRoute } from "./StyledCommon";
 const Card = styled.li`
   list-style: none;
   text-align: center;
-  color: #d5d5d5;
+  color: #fff;
   &:hover {
     ${(props) =>
       props.variant === "movie"

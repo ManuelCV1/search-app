@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StyledLinkRoute = styled(Link)`
   text-decoration: none;
@@ -9,6 +9,16 @@ export const StyledLinkRoute = styled(Link)`
 export const StyledLinkAnchor = styled.a`
   text-decoration: none;
   color: #fff;
+`;
+
+export const Rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 `;
 
 export const DetailTile = styled.h1`
@@ -28,14 +38,20 @@ export const DetailImg = styled.img`
   max-width: 480px;
   height: auto;
   margin: 15px;
+  @media (max-width: 550px) {
+    ${(props) => props.variant === "gif" && `width:250px;height:250px;`};
+  }
 `;
 
-export const DetailText = styled.p`
+export const DetailText = styled.div`
   font-size: 1.2rem;
   color: #d5d5d5;
   max-width: 480px;
   height: auto;
-  margin: 15px;
+  margin: 1rem;
+  @media (max-width: 550px) {
+    margin: 1rem 2rem;
+  }
 `;
 
 export const StrongText = styled.strong`
@@ -48,7 +64,7 @@ export const DetailColums = styled.div`
   margin: 15px;
 `;
 
-export const DetailAnchor = styled.div`
+export const DetailAnchor = styled.a`
   color: #fff;
   text-decoration: none;
   &:hover {

@@ -1,5 +1,15 @@
-import style from "./NoResults.module.css"
+import styled from "styled-components";
+
+const NoResultContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+`;
 
 export function NoResults() {
-    return <h1 className={style.titleResult}>No Results</h1>
+  return (
+    <NoResultContainer>
+      <h1>No Results</h1>
+    </NoResultContainer>
+  );
 }

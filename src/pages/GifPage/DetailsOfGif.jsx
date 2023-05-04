@@ -14,6 +14,7 @@ export function DetailsOfGif({ dataGifDetails }) {
       <DetailTile>Gif Details</DetailTile>
       <DetailContainer>
         <DetailImg
+          variant="gif"
           src={dataGifDetails[0].images.original.url || placeHolder}
           alt={dataGifDetails[0].title}
         />

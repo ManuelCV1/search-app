@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes, useSearchParams, Navigate } from "react-router-dom";
 import { GifLayaout } from "./pages/GifPage/GifLayaout";
 import { MovieLayaout } from "./pages/MoviePage/MovieLayaout";
@@ -6,6 +5,7 @@ import { GifDetails } from "./pages/GifPage/GifDetails";
 import { MovieDetails } from "./pages/MoviePage/MovieDetails";
 import { useDebounce } from "./Hooks/useDebounce";
 import { HeaderComponent } from "./HeaderComponet";
+import ComingSoon from "./pages/ComingSoon/ComingSoon";
 
 function App() {
   const [query] = useSearchParams();
@@ -49,6 +49,8 @@ function App() {
             path="/movies/details/:movieId"
             element={<MovieDetails searchKeyword={searchKeyword} />}
           />
+
+          <Route path="/soon" element={<ComingSoon />} />
 
           <Route path="*" element={<Navigate replace to="movies" />} />
         </Routes>
