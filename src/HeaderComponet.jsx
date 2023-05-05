@@ -79,6 +79,9 @@ const MainDescriptionContainer = styled.div`
     text-align: center;
     margin: 0 1rem 1rem 1rem;
   }
+  @media (max-width: 550px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export function HeaderComponent() {
