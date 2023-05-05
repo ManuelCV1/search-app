@@ -11,12 +11,25 @@ export const StyledLinkAnchor = styled.a`
   color: #fff;
 `;
 
+export const BlinkingLight = keyframes`
+
+  0%{
+  opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+`;
+
 export const Jumping = keyframes`
 0%{
   transform: scale(1);
 }
   50%{
-    transform: scale(1.5);
+    transform: scale(2);
   }
   100%{
     transform: scale(1);

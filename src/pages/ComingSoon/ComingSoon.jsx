@@ -2,7 +2,7 @@ import { BsChatLeftText } from "react-icons/bs";
 import { IoSettingsSharp } from "react-icons/io5";
 import styled from "styled-components";
 import { FooterArrow } from "../../common/FooterArrow";
-import { Rotate } from "../../common/StyledCommon";
+import { BlinkingLight, Rotate } from "../../common/StyledCommon";
 
 const ComingSoonContainer = styled.div`
   margin: 25px 0;
@@ -36,17 +36,26 @@ const TextContainer = styled.div`
     color: #d5d5d5;
     position: relative;
   }
+
   > p > strong {
+    position: relative;
+  }
+  > p > strong > span {
     &:before {
       position: absolute;
       top: 6px;
-      left: -15px;
+      left: -20px;
       content: "";
       background-color: #fbc500;
-      width: 1rem;
-      height: 1rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      animation: ${BlinkingLight} 1s infinite steps(1);
       @media (max-width: 550px) {
-        background-color: transparent;
+        width: 1rem;
+        height: 1rem;
+        left: -18px;
+        top: 6px;
+        //background-color: transparent;
       }
     }
   }
@@ -68,8 +77,11 @@ const ComingSoon = () => {
             <IconSetting size={35} /> Coming Soon...
           </h1>
           <p>
-            <strong>SearchApp</strong> is Working for you!. To provide you with
-            the content you are looking for on the web{" "}
+            <strong>
+              <span>S</span>earchApp
+            </strong>{" "}
+            is Working for you!. To provide you with the content you are looking
+            for on the web{" "}
           </p>
         </TextContainer>
       </ComingSoonContainer>

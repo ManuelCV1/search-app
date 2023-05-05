@@ -96,10 +96,10 @@ export function HeaderComponent() {
       </ContainerLink>
       <MainDescriptionContainer>
         <p>
-          <strong>SearchApp</strong> allows you to search your favorite content
-          on the web with one click. You can get lists of{" "}
-          <strong>movies</strong>, <strong>series</strong>,{" "}
-          <strong>gifs</strong>, among others...
+          <strong>SearchApp</strong> allows you to search🔍 your favorite
+          content on the web with one click. You can get lists of{" "}
+          <strong>movies</strong>🎬, <strong>series</strong>🎥,{" "}
+          <strong>gifs</strong>😉, among others...
         </p>
       </MainDescriptionContainer>
       <SearchInputComponent />
